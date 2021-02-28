@@ -138,8 +138,8 @@
 		<li Class="DeathRattle.HediffGiver_BrainDamage">
 			<hediff>BrainDamage</hediff>
 			<minSeverity>0.36</minSeverity>
-			<baseMtbDays>0.011</baseMtbDays>
-			<severityAmount>0.05</severityAmount>
+			<baseMtbDays>0.023</baseMtbDays>
+			<severityAmount>0.1</severityAmount>
 			<partsToAffect>
 				<li>Brain</li>
 			</partsToAffect>
@@ -183,8 +183,8 @@
 		<li Class="DeathRattle.HediffGiver_BrainDamage">
 			<hediff>BrainDamage</hediff>
 			<minSeverity>0.36</minSeverity>
-			<baseMtbDays>0.011</baseMtbDays>
-			<severityAmount>0.05</severityAmount>
+			<baseMtbDays>0.023</baseMtbDays>
+			<severityAmount>0.1</severityAmount>
 			<partsToAffect>
 				<li>Brain</li>
 			</partsToAffect>
