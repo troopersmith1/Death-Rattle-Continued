@@ -56,7 +56,7 @@
 			<li Class="DeathRattle.HediffGiver_BrainDamage">
 				<hediff>BrainDamage</hediff>
 				<minSeverity>0.72</minSeverity>
-				<baseMtbDays>0.1</baseMtbDays>
+				<baseMtbDays>0.17</baseMtbDays>
 				<severityAmount>0.05</severityAmount>
 				<partsToAffect>
 					<li>Brain</li>
