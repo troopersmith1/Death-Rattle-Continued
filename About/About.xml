@@ -16,6 +16,8 @@ Be warned: Just because they survive, doesn't mean they won't suffer permanent b
 Now incorporates the functionality of Death Rattle Comatose into the main mod. Also adjusted the severity of acute liver failure and the threshold before brain damage begins to occur, which allows more time to react to the injury.
 
 It should be compatible with everything. Just try it, and let me know if it doesn't work, so I can fix it.
+
+Includes a patch for EPOE: Forked so that the Neuro-Cure can be used to repair Brain Damage.
 	</description>
 	<modDependencies>
 		<li>
