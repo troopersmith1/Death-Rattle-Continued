@@ -135,10 +135,11 @@
       </li>
 	</stages>
 	<hediffGivers>
-		<li Class="HediffGiver_RandomDrugEffect">
-			<hediff>SevereBrainDamage</hediff>
+		<li Class="DeathRattle.HediffGiver_BrainDamage">
+			<hediff>BrainDamage</hediff>
 			<minSeverity>0.36</minSeverity>
-			<baseMtbDays>0.09</baseMtbDays>
+			<baseMtbDays>0.011</baseMtbDays>
+			<severityAmount>0.05</severityAmount>
 			<partsToAffect>
 				<li>Brain</li>
 			</partsToAffect>
@@ -179,10 +180,11 @@
       </li>
 	</stages>
 	<hediffGivers>
-		<li Class="HediffGiver_RandomDrugEffect">
+		<li Class="DeathRattle.HediffGiver_BrainDamage">
 			<hediff>BrainDamage</hediff>
 			<minSeverity>0.36</minSeverity>
-			<baseMtbDays>0.09</baseMtbDays>
+			<baseMtbDays>0.011</baseMtbDays>
+			<severityAmount>0.05</severityAmount>
 			<partsToAffect>
 				<li>Brain</li>
 			</partsToAffect>
@@ -203,13 +205,15 @@
     <stages>
       <li>
         <lifeThreatening>true</lifeThreatening>
+		<painFactor>0</painFactor>
       </li>
 	</stages>
 	<hediffGivers>
-		<li Class="HediffGiver_RandomDrugEffect">
-			<hediff>VegetativeState</hediff>
+		<li Class="DeathRattle.HediffGiver_BrainDamage">
+			<hediff>BrainDamage</hediff>
 			<minSeverity>0.6</minSeverity>
 			<baseMtbDays>1</baseMtbDays>
+			<severityAmount>1</severityAmount>
 			<partsToAffect>
 				<li>Brain</li>
 			</partsToAffect>
@@ -222,9 +226,43 @@
 		<defName>BrainDamage</defName>
 		<label>brain damage</label>
 		<description>The victim has brain damage</description>
+		<initialSeverity>0</initialSeverity>
+		<maxSeverity>1</maxSeverity>
 		<stages>
 			<li>
-				<partEfficiencyOffset>-0.2</partEfficiencyOffset>
+				<label>minor</label>
+				<partEfficiencyOffset>-0.05</partEfficiencyOffset>
+			</li>
+			<li>
+				<label>minor</label>
+				<minSeverity>0.2</minSeverity>
+				<partEfficiencyOffset>-0.15</partEfficiencyOffset>
+			</li>
+			<li>
+				<label>major</label>
+				<minSeverity>0.4</minSeverity>
+				<partEfficiencyOffset>-0.30</partEfficiencyOffset>
+			</li>
+			<li>
+				<label>major</label>
+				<minSeverity>0.6</minSeverity>
+				<partEfficiencyOffset>-0.5</partEfficiencyOffset>
+			</li>
+			<li>
+				<label>extreme</label>
+				<minSeverity>0.8</minSeverity>
+				<partEfficiencyOffset>-0.75</partEfficiencyOffset>
+			</li>
+			<li>
+				<label>vegetative state</label>
+				<minSeverity>1</minSeverity>
+				<painFactor>0</painFactor>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.1</setMax>
+					</li>
+				</capMods>
 			</li>
 		</stages>
 	</HediffDef>
@@ -235,7 +273,7 @@
 		<description>The victim has severe brain damage</description>
 		<stages>
 			<li>
-				<partEfficiencyOffset>-0.5</partEfficiencyOffset>
+				<partEfficiencyOffset>-0.4</partEfficiencyOffset>
 			</li>
 		</stages>
 	</HediffDef>
