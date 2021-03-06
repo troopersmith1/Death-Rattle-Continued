@@ -205,7 +205,6 @@
     <stages>
       <li>
         <lifeThreatening>true</lifeThreatening>
-		<painFactor>0</painFactor>
       </li>
 	</stages>
 	<hediffGivers>
