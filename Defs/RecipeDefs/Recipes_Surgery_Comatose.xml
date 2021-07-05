@@ -1,17 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- Anesthetize -->
-
   <RecipeDef ParentName="SurgeryFlesh">
     <defName>ArtificialComa</defName>
     <label>artificial coma</label>
     <description>Render a creature unconscious for undefined time by administering artificial coma drug. A high dose of WakeUp will be required to revert this!</description>
-    <workerClass>DeathRattle.Recipe_AdministerComaDrug</workerClass>
+    <workerClass>Recipe_InstallImplant</workerClass>
     <jobString>putting into artificial coma.</jobString>
-    <workAmount>20</workAmount>
+    <workAmount>400</workAmount>
     <hideBodyPartNames>true</hideBodyPartNames>
-    <targetsBodyPart>false</targetsBodyPart>
 	<anesthetize>false</anesthetize>
     <surgerySuccessChanceFactor>2</surgerySuccessChanceFactor>
     <ingredients>
@@ -24,6 +21,10 @@
         <count>5</count>
       </li>
     </ingredients>
+	<appliedOnFixedBodyParts>
+      <li>Brain</li>
+    </appliedOnFixedBodyParts>
+	<addsHediff>ArtificialComa</addsHediff>
     <fixedIngredientFilter>
       <categories>
         <li>Medicine</li>

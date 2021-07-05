@@ -2,6 +2,24 @@
 
 <Patch>
 
+	<Operation Class="PatchOperationSequence">
+        <operations>			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Human"]/recipes</xpath>
+				<value>
+					<li>ArtificialComa</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[@Name = "AnimalThingBase"]/recipes</xpath>
+				<value>
+					<li>ArtificialComa</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Expanded Prosthetics and Organ Engineering - Forked</li>
