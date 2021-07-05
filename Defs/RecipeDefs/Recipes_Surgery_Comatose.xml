@@ -5,7 +5,7 @@
     <defName>ArtificialComa</defName>
     <label>artificial coma</label>
     <description>Render a creature unconscious for undefined time by administering artificial coma drug. A high dose of WakeUp will be required to revert this!</description>
-    <workerClass>Recipe_InstallImplant</workerClass>
+    <workerClass>DeathRattle.Recipe_AdministerComaDrug</workerClass>
     <jobString>putting into artificial coma.</jobString>
     <workAmount>400</workAmount>
     <hideBodyPartNames>true</hideBodyPartNames>
@@ -24,7 +24,6 @@
 	<appliedOnFixedBodyParts>
       <li>Brain</li>
     </appliedOnFixedBodyParts>
-	<addsHediff>ArtificialComa</addsHediff>
     <fixedIngredientFilter>
       <categories>
         <li>Medicine</li>
