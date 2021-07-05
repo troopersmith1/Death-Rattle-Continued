@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
+using System;
 using System.Linq;
 using Verse;
 
@@ -7,6 +8,14 @@ namespace DeathRattle
 {
     public class Recipe_AdministerComaDrug : Recipe_Surgery
     {
+        public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(
+              Pawn pawn,
+              RecipeDef recipe) => MedicalRecipesUtility.GetFixedPartsToApplyOn(recipe, pawn, (Func<BodyPartRecord, bool>)(record => pawn.health.hediffSet.GetNotMissingParts().Contains<BodyPartRecord>(record) && !pawn.health.hediffSet.PartOrAnyAncestorHasDirectlyAddedParts(record) && !pawn.health.hediffSet.hediffs.Any<Hediff>((Predicate<Hediff>)(x =>
+              {
+                  if (x.Part != record)
+                      return false;
+                  return x.def == recipe.addsHediff;
+              }))));
         public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
             if (!pawn.RaceProps.IsFlesh)
