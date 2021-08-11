@@ -90,5 +90,46 @@
 			</operations>
 		</match>
 	</Operation>
+	
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>More Archotech Garbage Reupload</li>
+        </mods>
+ 
+        <!-- Courtesy of user Kaedys
+        The Psychic Kill Switch "kills" the pawn by setting their consciousness to 0, with the hediff persisting for
+        7500 ticks (125s).  This normally *would* kill a pawn, but certain mods intercept death at 0 consciousness.
+        Instead, we'll just be adding a lethalSeverity tag to the hediff, so it immediately kills the pawn on
+        application even against mods that intercept death-by-0-consciousness.  Also, remove the Disappears comp,
+        because last I checked, death is meant to be a permanent state of affairs.
+        -->
+        <match Class="PatchOperationConditional">
+            <xpath>/Defs/HediffDef[defName="CockAndBallTortureOverload"]</xpath>
+            <!-- Yes, that's the name of the def.  Don't ask me. -->
+            <match Class="PatchOperationSequence">
+                <operations>
+                    <li Class="PatchOperationConditional">
+                        <xpath>/Defs/HediffDef[defName="CockAndBallTortureOverload"]/lethalSeverity</xpath>
+                        <nomatch Class="PatchOperationAdd">
+                            <xpath>/Defs/HediffDef[defName="CockAndBallTortureOverload"]</xpath>
+                            <value>
+                                <lethalSeverity>0.01</lethalSeverity>
+                            </value>
+                        </nomatch>
+                    </li>
+ 
+                    <li Class="PatchOperationConditional">
+                        <xpath>/Defs/HediffDef[defName="CockAndBallTortureOverload"]/comps</xpath>
+                        <match Class="PatchOperationConditional">
+                            <xpath>/Defs/HediffDef[defName="CockAndBallTortureOverload"]/comps/li[@Class="HediffCompProperties_Disappears"]</xpath>
+                            <match Class="PatchOperationRemove">
+                                <xpath>/Defs/HediffDef[defName="CockAndBallTortureOverload"]/comps/li[@Class="HediffCompProperties_Disappears"]</xpath>
+                            </match>
+                        </match>
+                    </li>
+                </operations>
+            </match>
+        </match>
+    </Operation>
 
 </Patch>
