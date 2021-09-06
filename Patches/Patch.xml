@@ -117,6 +117,16 @@
                             </value>
                         </nomatch>
                     </li>
+					
+                    <li Class="PatchOperationConditional">
+                        <xpath>/Defs/HediffDef[defName="CockAndBallTortureOverload"]/initialSeverity</xpath>
+                        <nomatch Class="PatchOperationAdd">
+                            <xpath>/Defs/HediffDef[defName="CockAndBallTortureOverload"]</xpath>
+                            <value>
+                                <initialSeverity>1</initialSeverity>
+                            </value>
+                        </nomatch>
+                    </li>
  
                     <li Class="PatchOperationConditional">
                         <xpath>/Defs/HediffDef[defName="CockAndBallTortureOverload"]/comps</xpath>
